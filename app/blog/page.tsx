@@ -1,0 +1,9 @@
+import { ArrowRight, Menu, MessageCircle } from 'lucide-react';
+import { blogPosts } from './posts';
+
+const nav = [['자연미 소개','/about'],['산전관리','/prenatal'],['산후관리','/postnatal'],['체형·약손관리','/body-care'],['프로그램·가격','/programs'],['후기·FAQ','/reviews'],['블로그','/blog']];
+
+function Header(){return <header className="site-header inner-header"><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><nav className="desktop-nav">{nav.map(([l,h])=><a key={h} href={h}>{l}</a>)}</nav><a className="header-cta" href="/contact"><MessageCircle size={17}/> 상담예약</a><details className="mobile-menu"><summary aria-label="메뉴 열기"><Menu/></summary><nav>{nav.map(([l,h])=><a key={h} href={h}>{l}</a>)}<a href="/contact">상담예약</a></nav></details></header>}
+function Footer(){return <><footer><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><p>자연미피부바디 공식 홈페이지 · 상담은 예약제로 운영됩니다.</p><p className="disclaimer">본 관리는 의료행위가 아니며, 개인의 상태에 따라 상담 후 진행됩니다.</p></footer><a className="mobile-fixed-cta" href="/contact"><MessageCircle size={19}/> 카카오톡 상담예약</a></>}
+
+export default function Blog(){return <main><Header/><section className="blog-hero"><p className="eyebrow">NATURAL BEAUTY JOURNAL</p><h1>몸을 이해하는<br/>차분한 읽을거리</h1><p>산전·산후의 변화와 약손관리 전후에 알아두면 좋은 내용을 자연미의 시선으로 전합니다.</p></section><section className="blog-list section-shell" aria-label="블로그 글 목록">{blogPosts.map((post,index)=><article className="blog-list-card" key={post.id}><div className="post-number">{String(index+1).padStart(2,'0')}</div><div><p className="post-meta"><span>{post.category}</span>{post.date} · 읽는 시간 {post.readTime}</p><h2><a href={`/blog/${post.id}`}>{post.title}</a></h2><p>{post.summary}</p><a className="post-link" href={`/blog/${post.id}`}>글 읽기 <ArrowRight size={16}/></a></div></article>)}</section><Footer/></main>}

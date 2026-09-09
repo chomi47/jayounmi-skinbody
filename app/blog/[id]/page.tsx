@@ -1,0 +1,13 @@
+import type { Metadata } from 'next';
+import { ArrowLeft, ArrowRight, Menu, MessageCircle } from 'lucide-react';
+import { notFound } from 'next/navigation';
+import { blogPosts, getBlogPost } from '../posts';
+
+const nav = [['자연미 소개','/about'],['산전관리','/prenatal'],['산후관리','/postnatal'],['체형·약손관리','/body-care'],['프로그램·가격','/programs'],['후기·FAQ','/reviews'],['블로그','/blog']];
+function Header(){return <header className="site-header inner-header"><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><nav className="desktop-nav">{nav.map(([l,h])=><a key={h} href={h}>{l}</a>)}</nav><a className="header-cta" href="/contact"><MessageCircle size={17}/> 상담예약</a><details className="mobile-menu"><summary aria-label="메뉴 열기"><Menu/></summary><nav>{nav.map(([l,h])=><a key={h} href={h}>{l}</a>)}<a href="/contact">상담예약</a></nav></details></header>}
+function Footer(){return <><footer><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><p>자연미피부바디 공식 홈페이지 · 상담은 예약제로 운영됩니다.</p><p className="disclaimer">본 관리는 의료행위가 아니며, 개인의 상태에 따라 상담 후 진행됩니다.</p></footer><a className="mobile-fixed-cta" href="/contact"><MessageCircle size={19}/> 카카오톡 상담예약</a></>}
+
+export async function generateMetadata({params}:{params:Promise<{id:string}>}):Promise<Metadata>{const {id}=await params;const post=getBlogPost(id);return post?{title:`${post.title} | 자연미피부바디`,description:post.summary}:{title:'글을 찾을 수 없습니다 | 자연미피부바디'}}
+export function generateStaticParams(){return blogPosts.map(({id})=>({id}))}
+
+export default async function BlogPostPage({params}:{params:Promise<{id:string}>}){const {id}=await params;const post=getBlogPost(id);if(!post)notFound();return <main><Header/><article className="article-page"><header><a className="back-link" href="/blog"><ArrowLeft size={16}/> 블로그 목록</a><p className="post-meta"><span>{post.category}</span>{post.date} · 읽는 시간 {post.readTime}</p><h1>{post.title}</h1><p className="article-lead">{post.intro}</p></header><div className="article-body">{post.sections.map((section)=><section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(p=><p key={p}>{p}</p>)}{section.points&&<ul>{section.points.map(p=><li key={p}>{p}</li>)}</ul>}</section>)}<aside className="article-note"><strong>안내</strong>이 글은 일반적인 관리 안내이며 개인의 건강 상태에 대한 진단이나 의료 조언을 대신하지 않습니다.</aside></div><footer className="article-footer"><a href="/blog"><ArrowLeft size={16}/> 다른 글 보기</a><a href="/contact">상담예약 <ArrowRight size={16}/></a></footer></article><Footer/></main>}
