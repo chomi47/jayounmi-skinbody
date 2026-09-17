@@ -10,5 +10,5 @@ export default defineConfig({
   server: isCodexSeatbeltSandbox
     ? { watch: { useFsEvents: false, usePolling: true } }
     : undefined,
-  plugins: [tailwindcss(), vinext(), nitro({ preset: 'netlify' })],
+  plugins: [tailwindcss(), vinext(), nitro()],
 });
