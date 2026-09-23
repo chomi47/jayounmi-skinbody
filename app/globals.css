@@ -73,3 +73,18 @@ footer>p,
   .program-photo small { font-size:18px; }
   .mobile-fixed-cta { font-size:17px; }
 }
+
+/* Full-screen 150% presentation with matching layout-width compensation. */
+html { background:var(--paper); }
+body { width:66.666667%; min-width:66.666667%; zoom:1.5; }
+
+/* Use crisp black typography on every light surface. */
+:root { --ink:#000; --muted:#000; --brown:#000; --sage:#000; }
+.lead,
+.post-meta,
+.post-number,
+.article-body p { color:#000; }
+
+@media(max-width:640px){
+  .mobile-fixed-cta { right:auto; width:66.666667vw; }
+}
