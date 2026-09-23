@@ -74,9 +74,9 @@ footer>p,
   .mobile-fixed-cta { font-size:17px; }
 }
 
-/* Full-screen 150% presentation with matching layout-width compensation. */
+/* Balanced full-width presentation at the browser's natural scale. */
 html { background:var(--paper); }
-body { width:66.666667%; min-width:66.666667%; zoom:1.5; }
+body { width:100%; min-width:0; zoom:1; }
 
 /* Use crisp black typography on every light surface. */
 :root { --ink:#000; --muted:#000; --brown:#000; --sage:#000; }
@@ -86,5 +86,5 @@ body { width:66.666667%; min-width:66.666667%; zoom:1.5; }
 .article-body p { color:#000; }
 
 @media(max-width:640px){
-  .mobile-fixed-cta { right:auto; width:66.666667vw; }
+  .mobile-fixed-cta { right:0; width:auto; }
 }
