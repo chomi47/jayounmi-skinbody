@@ -2,8 +2,8 @@ import { ArrowRight, Menu, MessageCircle } from 'lucide-react';
 import { blogPosts } from './blog/posts';
 
 const programs = [
-  { image: '/images/prenatal-consultation.png', alt: '편안한 공간에서 산전 상담을 나누는 모습', eyebrow: 'PRENATAL', title: '산전관리', text: '임신 중 달라진 몸을 편안하게 살핍니다.', href: '/prenatal' },
-  { image: '/images/postnatal-rest.png', alt: '차분한 공간에서 산후 휴식 상담을 받는 모습', eyebrow: 'POSTNATAL', title: '산후관리', text: '회복 시기와 생활 리듬에 맞춰 안내합니다.', href: '/postnatal' },
+  { image: '/images/prenatal-consultation.png', alt: '옆으로 누워 편안하게 산전 관리를 받는 모습', eyebrow: 'PRENATAL', title: '산전관리', text: '임신 중 달라진 몸을 편안하게 살핍니다.', href: '/prenatal' },
+  { image: '/images/postnatal-rest.png', alt: '누운 자세로 어깨와 팔 관리를 받는 모습', eyebrow: 'POSTNATAL', title: '산후관리', text: '회복 시기와 생활 리듬에 맞춰 안내합니다.', href: '/postnatal' },
   { image: '/images/body-balance-consultation.png', alt: '바른 자세와 몸의 균형을 상담하는 모습', eyebrow: 'BODY BALANCE', title: '체형·약손관리', text: '일상에 쌓인 긴장과 균형을 살핍니다.', href: '/body-care' },
 ];
 

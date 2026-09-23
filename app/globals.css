@@ -37,3 +37,39 @@ footer { display:grid; width:100%; max-width:100%; grid-template-columns:auto 1f
 .blog-hero { background:var(--cocoa); color:#fff; padding:110px 24px 120px; text-align:center; }.blog-hero .eyebrow { color:#bdc7bb; }.blog-hero h1 { margin:0; font-family:var(--font-serif); font-size:clamp(44px,5vw,68px); font-weight:500; line-height:1.4; letter-spacing:-.045em; }.blog-hero>p:last-child { max-width:650px; margin:24px auto 0; color:#d5cbc4; }.blog-list { padding-block:100px; }.blog-list-card { display:grid; grid-template-columns:100px 1fr; gap:35px; padding:46px 0; border-bottom:1px solid var(--line); }.blog-list-card>* { min-width:0; }.blog-list-card:first-child { border-top:1px solid var(--line); }.post-number { color:#b1a99f; font-family:var(--font-serif); font-size:22px; }.blog-list-card h2 { margin:0; overflow-wrap:anywhere; font-family:var(--font-serif); font-size:clamp(25px,3vw,37px); font-weight:500; line-height:1.45; letter-spacing:-.035em; }.blog-list-card h2 a:hover { color:var(--sage); }.blog-list-card div>p:not(.post-meta) { max-width:680px; color:var(--muted); }.article-page { width:calc(100% - 40px); max-width:800px; margin:0 auto; padding:90px 0 110px; }.article-page>header { padding-bottom:55px; border-bottom:1px solid var(--line); }.back-link { display:inline-flex; align-items:center; gap:7px; margin-bottom:48px; color:var(--muted); font-size:14px; }.article-page h1 { margin:15px 0 24px; overflow-wrap:anywhere; font-family:var(--font-serif); font-size:clamp(36px,5vw,58px); font-weight:500; line-height:1.4; letter-spacing:-.045em; }.article-lead { color:var(--muted); font-size:18px; line-height:1.9; }.article-body { padding:35px 0 25px; }.article-body section { padding:28px 0; }.article-body h2 { margin:0 0 16px; font-family:var(--font-serif); font-size:26px; font-weight:600; }.article-body p { color:#625a55; line-height:1.95; }.article-note { margin-top:35px; padding:25px 28px; background:var(--cream); color:var(--muted); font-size:14px; }.article-note strong { display:block; color:var(--ink); margin-bottom:5px; }.article-footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px; padding:28px 0; border-top:1px solid var(--line); background:transparent; color:var(--ink); }.article-footer a { display:flex; align-items:center; gap:7px; font-size:14px; font-weight:700; }
 @media(max-width:800px){.home-blog { padding:78px 0; }.home-blog-heading { align-items:flex-start; flex-direction:column; }.home-blog-grid { grid-template-columns:1fr; }.home-blog-grid article,.home-blog-grid article+article { padding:28px 0; border-right:0; border-bottom:1px solid #d6cfc4; }.home-blog-grid h3 { min-height:0; }.blog-hero { padding:80px 20px; }.blog-list { padding-block:65px; }.blog-list-card { grid-template-columns:48px 1fr; gap:15px; padding:34px 0; }.article-page { padding:65px 0 80px; }.article-page>header { padding-bottom:40px; }.back-link { margin-bottom:35px; }}
 @media(max-width:520px){.blog-list-card { grid-template-columns:1fr; }.post-number { font-size:16px; }.article-lead { font-size:16px; }.article-footer { gap:20px; }}
+
+/* Readability refresh: keep all supporting copy comfortably legible. */
+body { font-size:18px; line-height:1.72; }
+.desktop-nav,
+.header-cta,
+.primary-button,
+.text-link,
+.trust-line,
+.program-content>span,
+.quote-band>p:last-child,
+footer>p,
+.process span,
+.price-table b,
+.post-meta,
+.home-blog-grid article>p:not(.post-meta),
+.post-link,
+.back-link,
+.article-note,
+.article-footer a { font-size:16px; }
+.eyebrow { font-size:18px; letter-spacing:.18em; }
+.brand small { font-size:22px; letter-spacing:.16em; }
+.lead,.article-lead { font-size:20px; }
+.program-card h3 { font-size:29px; }
+.program-photo small { right:12px; bottom:11px; padding:5px 10px; font-size:22px; line-height:1.25; }
+.home-blog-grid h3 { font-size:23px; }
+.article-body h2 { font-size:28px; }
+@media(max-width:640px){
+  body { font-size:17px; }
+  .hero { min-height:760px; }
+  .hero h1 { font-size:clamp(31px,8.6vw,37px); }
+  .intro h2,.steps h2,.final-cta h2 { font-size:clamp(31px,8.4vw,36px); }
+  .lead,.article-lead { font-size:18px; }
+  .trust-line span { font-size:16px; }
+  .program-photo small { font-size:18px; }
+  .mobile-fixed-cta { font-size:17px; }
+}
