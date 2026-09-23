@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CARE_PROGRAMS } from './programs';
 
 export const SITE_URL = 'https://jayounmi-skinbody.com';
 export const SITE_NAME = '자연미피부바디';
@@ -27,7 +28,7 @@ export const pageSeo = {
   },
   '/programs': {
     title: '프로그램·이용 안내 | 자연미피부바디',
-    description: '산전·산후·체형·전신·얼굴 약손관리의 구성과 이용 방법을 확인하세요. 관리 시간과 비용은 현재 상태와 희망 부위 상담 후 안내합니다.',
+    description: '자연미피부바디의 산전관리, 산후관리, 전신 바디 밸런스와 약손관리 프로그램별 관리 시간과 가격을 안내합니다.',
   },
   '/reviews': {
     title: '후기·자주 묻는 질문 | 자연미피부바디',
@@ -109,13 +110,34 @@ export const businessJsonLd = {
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: '자연미피부바디 관리 프로그램',
-    itemListElement: [
-      ['산전관리', '/prenatal'],
-      ['산후관리', '/postnatal'],
-      ['체형·약손관리', '/body-care'],
-    ].map(([name, path]) => ({
-      '@type': 'Offer',
-      itemOffered: { '@type': 'Service', name, url: absoluteUrl(path) },
-    })),
+    itemListElement: CARE_PROGRAMS.map(program => programOfferJsonLd(program)),
   },
+};
+
+export function programOfferJsonLd(program: (typeof CARE_PROGRAMS)[number]) {
+  return {
+    '@type': 'Offer',
+    name: program.name,
+    price: String(program.price),
+    priceCurrency: 'KRW',
+    url: absoluteUrl(program.path),
+    itemOffered: {
+      '@type': 'Service',
+      name: program.name,
+      description: program.durationMinutes
+        ? `${program.durationMinutes}분 ${program.description}`
+        : program.description,
+      url: absoluteUrl(program.path),
+      provider: { '@id': `${SITE_URL}/#business` },
+    },
+  };
+}
+
+export const programCatalogJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'OfferCatalog',
+  '@id': `${absoluteUrl('/programs')}#catalog`,
+  name: '자연미피부바디 프로그램 안내',
+  url: absoluteUrl('/programs'),
+  itemListElement: CARE_PROGRAMS.map(program => programOfferJsonLd(program)),
 };

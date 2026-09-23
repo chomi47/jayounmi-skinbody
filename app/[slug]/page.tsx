@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { ArrowRight, Check, Clock3, MapPin, Menu, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { notFound } from 'next/navigation';
-import { absoluteUrl, breadcrumbJsonLd, createMetadata, JsonLd, pageSeo, SITE_URL } from '../seo';
+import { absoluteUrl, breadcrumbJsonLd, createMetadata, JsonLd, pageSeo, programCatalogJsonLd, programOfferJsonLd, SITE_URL } from '../seo';
+import { CARE_PROGRAMS, formatProgramSummary } from '../programs';
 
 const nav = [
   ['자연미 소개', '/about'], ['산전관리', '/prenatal'], ['산후관리', '/postnatal'],
@@ -66,7 +67,7 @@ function ServicePage({data}:{data:typeof services[keyof typeof services]}){
 
 function About(){return <main><Header/><section className="sub-hero"><p className="eyebrow">ABOUT NATURAL BEAUTY</p><h1>손끝의 기술보다 먼저,<br/>한 사람의 몸을 이해합니다</h1><p>25년 동안 변하지 않은 것은 관리 전 충분히 듣는 태도입니다.</p></section><section className="content-block two-column section-shell"><div><p className="eyebrow">25 YEARS</p><h2>오랜 경험은<br/>섬세한 판단이 됩니다</h2></div><div><p>몸은 매일 같지 않습니다. 특히 임신과 출산을 지나는 동안에는 작은 변화에도 세심한 배려가 필요합니다. 자연미는 25년의 현장 경험을 바탕으로, 매회 같은 방식보다 오늘의 컨디션에 맞는 관리에 집중합니다.</p><p>강한 자극이나 과장된 변화를 약속하지 않습니다. 편안하게 머물 수 있는 공간, 충분한 설명, 몸의 반응을 살피는 손으로 신뢰를 쌓아갑니다.</p></div></section><section className="dark-block values"><div className="section-shell"><p className="eyebrow">OUR PROMISE</p><h2>자연미가 지키는 세 가지</h2><div className="info-cards"><article><b>01</b><h3>먼저 듣기</h3><p>몸의 변화와 불편, 걱정을 충분히 듣습니다.</p></article><article><b>02</b><h3>무리하지 않기</h3><p>편안함을 우선하고 몸의 반응에 맞춥니다.</p></article><article><b>03</b><h3>정직하게 안내하기</h3><p>가능한 범위와 주의사항을 분명히 설명합니다.</p></article></div></div></section><Consultation/><Footer/></main>}
 
-function Programs(){return <main><Header/><section className="sub-hero"><p className="eyebrow">PROGRAM & GUIDE</p><h1>필요한 관리만,<br/>알기 쉽게 안내합니다</h1><p>확정된 가격과 소요 시간은 상담 후 투명하게 안내드립니다.</p></section><section className="content-block section-shell"><div className="section-title"><p className="eyebrow">PROGRAMS</p><h2>프로그램 구성</h2></div><div className="price-table"><div><strong>산전 약손관리</strong><span>현재 상태에 맞춘 편안한 자세와 부위별 관리</span><b>상담 후 안내</b></div><div><strong>산후 회복관리</strong><span>회복 시기와 생활 리듬을 고려한 맞춤 관리</span><b>상담 후 안내</b></div><div><strong>체형·전신 약손관리</strong><span>전신 또는 집중 부위를 선택해 구성</span><b>상담 후 안내</b></div><div><strong>얼굴 포함 약손관리</strong><span>얼굴과 바디를 한 흐름으로 구성</span><b>상담 후 안내</b></div></div><aside className="notice wide"><strong>단회 · 5회 · 10회 이용권</strong>회차권의 구성과 유효기간, 환불 기준은 실제 운영 정책이 확정된 뒤 정확한 내용으로 게시합니다.</aside></section><Consultation/><Footer/></main>}
+function Programs(){return <main><JsonLd data={programCatalogJsonLd}/><Header/><section className="sub-hero"><p className="eyebrow">PROGRAM & GUIDE</p><h1>필요한 관리만,<br/>알기 쉽게 안내합니다</h1><p>프로그램별 관리 시간과 가격을 확인하실 수 있습니다.</p></section><section className="content-block section-shell"><div className="section-title"><p className="eyebrow">PROGRAMS</p><h2>프로그램 구성</h2></div><div className="price-table">{CARE_PROGRAMS.map(program=><div key={program.name}><strong>{program.name}</strong><span>{program.description}</span><b>{formatProgramSummary(program)}</b></div>)}</div><aside className="notice wide"><strong>안내</strong>관리 범위와 진행 방법은 현재 상태를 확인한 뒤 안내합니다.</aside></section><Consultation/><Footer/></main>}
 
 function Reviews(){return <main><Header/><section className="sub-hero"><p className="eyebrow">REVIEWS & FAQ</p><h1>예약 전의 걱정을<br/>차분히 풀어드립니다</h1><p>후기는 실제 이용 고객의 동의를 받은 원문만 게시합니다.</p></section><section className="soft-block testimonial-placeholder"><p className="eyebrow">CUSTOMER REVIEWS</p><h2>실제 후기 준비 중</h2><p>이름·관리 시기·후기 원문을 확인하고 고객 동의를 받은 뒤 공개합니다. 과장하거나 임의로 작성한 후기는 사용하지 않습니다.</p></section><section className="content-block section-shell faq"><div className="section-title"><p className="eyebrow">COMMON QUESTIONS</p><h2>예약 전 자주 묻는 질문</h2></div>{[['상담만 먼저 받아도 되나요?','네. 현재 상태와 희망 사항을 먼저 이야기한 뒤 예약 여부를 결정하셔도 됩니다.'],['준비해야 할 것이 있나요?','예약 시 프로그램에 맞는 준비사항을 개별 안내해 드립니다.'],['관리를 미뤄야 하는 경우가 있나요?','발열, 급성 통증, 출혈 등 평소와 다른 증상이 있다면 관리를 미루고 의료진과 먼저 상담해 주세요.'],['예약 변경은 어떻게 하나요?','운영 정책이 확정되면 변경 가능 시간과 방법을 정확히 안내하겠습니다.']].map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</section><Consultation/><Footer/></main>}
 
@@ -96,6 +97,7 @@ export default async function Page({params}:{params:Promise<{slug:string}>}){
       description:data.intro,
       url:absoluteUrl(path),
       provider:{'@id':`${SITE_URL}/#business`},
+      offers:CARE_PROGRAMS.filter(program=>program.path===path).map(program=>programOfferJsonLd(program)),
     };
     content=<><JsonLd data={service}/><ServicePage data={data}/></>;
   }else if(slug==='about')content=<About/>;
