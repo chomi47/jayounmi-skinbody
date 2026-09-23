@@ -1,5 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "pnpm run build"
+  "buildCommand": "pnpm run build",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.jayounmi-skinbody.com" }],
+      "destination": "https://jayounmi-skinbody.com/:path*",
+      "permanent": true
+    }
+  ]
 }

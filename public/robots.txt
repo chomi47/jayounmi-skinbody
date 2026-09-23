@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# 검색·사용자 요청형 AI 크롤러는 공개 콘텐츠 접근을 허용합니다.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# 모델 학습 전용 크롤링은 허용하지 않습니다.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://jayounmi-skinbody.com/sitemap.xml

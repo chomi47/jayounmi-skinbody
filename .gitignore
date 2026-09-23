@@ -1,6 +1,8 @@
 node_modules/
 .next/
 dist/
+.output/
 .vercel/
 .netlify/
 next-env.d.ts
+*.tsbuildinfo

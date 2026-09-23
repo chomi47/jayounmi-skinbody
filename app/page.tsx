@@ -1,5 +1,6 @@
 import { ArrowRight, Menu, MessageCircle } from 'lucide-react';
 import { blogPosts } from './blog/posts';
+import { businessJsonLd, JsonLd } from './seo';
 
 const programs = [
   { image: '/images/prenatal-consultation.png', alt: '옆으로 누워 편안하게 산전 관리를 받는 모습', eyebrow: 'PRENATAL', title: '산전관리', text: '임신 중 달라진 몸을 편안하게 살핍니다.', href: '/prenatal' },
@@ -16,6 +17,7 @@ const nav = [
 export default function Home() {
   return (
     <main>
+      <JsonLd data={businessJsonLd} />
       <header className="site-header">
         <a className="brand" href="/" aria-label="자연미피부바디 홈">
           <img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" />

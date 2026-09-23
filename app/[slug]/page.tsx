@@ -1,5 +1,7 @@
+import type { Metadata } from 'next';
 import { ArrowRight, Check, Clock3, MapPin, Menu, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import { absoluteUrl, breadcrumbJsonLd, createMetadata, JsonLd, pageSeo, SITE_URL } from '../seo';
 
 const nav = [
   ['자연미 소개', '/about'], ['산전관리', '/prenatal'], ['산후관리', '/postnatal'],
@@ -37,6 +39,16 @@ const services = {
   }
 } as const;
 
+const pageNames = {
+  about: '자연미 소개',
+  prenatal: '산전관리',
+  postnatal: '산후관리',
+  'body-care': '체형·약손관리',
+  programs: '프로그램·이용 안내',
+  reviews: '후기·FAQ',
+  contact: '상담예약',
+} as const;
+
 function Header(){return <header className="site-header inner-header"><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><nav className="desktop-nav">{nav.map(([l,h])=><a key={h} href={h}>{l}</a>)}</nav><a className="header-cta" href="/contact"><MessageCircle size={17}/> 상담예약</a><details className="mobile-menu"><summary aria-label="메뉴 열기"><Menu/></summary><nav>{nav.map(([l,h])=><a key={h} href={h}>{l}</a>)}<a href="/contact">상담예약</a></nav></details></header>}
 function Footer(){return <><footer><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><p>자연미피부바디 공식 홈페이지 · 상담은 예약제로 운영됩니다.</p><p className="disclaimer">본 관리는 의료행위가 아니며, 개인의 상태에 따라 상담 후 진행됩니다.</p></footer><a className="mobile-fixed-cta" href="/contact"><MessageCircle size={19}/> 카카오톡 상담예약</a></>}
 function Consultation(){return <section className="final-cta"><p className="eyebrow">PRIVATE CONSULTATION</p><h2>지금의 상태부터<br/>편안히 이야기해 주세요</h2><p>관리 가능 시기와 프로그램은 1:1 상담 후 안내합니다.</p><a className="primary-button" href="/contact">카카오톡 상담예약 <ArrowRight size={18}/></a></section>}
@@ -60,5 +72,36 @@ function Reviews(){return <main><Header/><section className="sub-hero"><p classN
 
 function Contact(){return <main><Header/><section className="sub-hero"><p className="eyebrow">CONTACT & RESERVATION</p><h1>몸의 상태를 먼저 듣는<br/>1:1 상담예약</h1><p>프로그램을 정하지 못했어도 괜찮습니다. 현재의 불편과 원하는 시간을 알려주세요.</p></section><section className="content-block contact-grid section-shell"><div><p className="eyebrow">RESERVATION</p><h2>상담예약 안내</h2><ol className="contact-steps"><li><b>1</b><span><strong>카카오톡 상담</strong>현재 상태와 희망 일정을 남겨주세요.</span></li><li><b>2</b><span><strong>프로그램 안내</strong>관리 가능 여부와 구성을 안내합니다.</span></li><li><b>3</b><span><strong>예약 확정</strong>날짜와 시간을 확인하면 예약이 완료됩니다.</span></li></ol></div><aside className="contact-card"><MessageCircle size={30}/><h3>카카오톡 상담예약</h3><p>공식 카카오톡 채널 주소가 확인되면 바로 연결됩니다.</p><span className="pending-button">채널 주소 연결 필요</span><hr/><p><Clock3 size={17}/> 영업시간 · 확인 후 반영</p><p><Phone size={17}/> 전화번호 · 확인 후 반영</p><p><MapPin size={17}/> 위치 · 확인 후 반영</p></aside></section><Footer/></main>}
 
-export default async function Page({params}:{params:Promise<{slug:string}>}){const {slug}=await params;if(slug in services)return <ServicePage data={services[slug as keyof typeof services]}/>;if(slug==='about')return <About/>;if(slug==='programs')return <Programs/>;if(slug==='reviews')return <Reviews/>;if(slug==='contact')return <Contact/>;notFound()}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
+  const {slug}=await params;
+  const path=`/${slug}` as keyof typeof pageSeo;
+  const seo=pageSeo[path];
+  return seo ? createMetadata(path,seo.title,seo.description) : {title:'페이지를 찾을 수 없습니다 | 자연미피부바디'};
+}
+
+export default async function Page({params}:{params:Promise<{slug:string}>}){
+  const {slug}=await params;
+  if(!(slug in pageNames))notFound();
+  const path=`/${slug}`;
+  const breadcrumbs=breadcrumbJsonLd([{name:'홈',path:'/'},{name:pageNames[slug as keyof typeof pageNames],path}]);
+  let content;
+  if(slug in services){
+    const data=services[slug as keyof typeof services];
+    const service={
+      '@context':'https://schema.org',
+      '@type':'Service',
+      '@id':`${absoluteUrl(path)}#service`,
+      name:data.title,
+      serviceType:data.title,
+      description:data.intro,
+      url:absoluteUrl(path),
+      provider:{'@id':`${SITE_URL}/#business`},
+    };
+    content=<><JsonLd data={service}/><ServicePage data={data}/></>;
+  }else if(slug==='about')content=<About/>;
+  else if(slug==='programs')content=<Programs/>;
+  else if(slug==='reviews')content=<Reviews/>;
+  else content=<Contact/>;
+  return <><JsonLd data={breadcrumbs}/>{content}</>;
+}
 export function generateStaticParams(){return ['about','prenatal','postnatal','body-care','programs','reviews','contact'].map(slug=>({slug}))}
