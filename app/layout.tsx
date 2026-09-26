@@ -49,7 +49,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim().toUpperCase();
+  const gaMeasurementId = 'G-EXSR2Z16Z6';
   const validGaMeasurementId = gaMeasurementId && /^G-[A-Z0-9]+$/.test(gaMeasurementId)
     ? gaMeasurementId
     : undefined;
