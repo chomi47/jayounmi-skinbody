@@ -16,7 +16,17 @@ const notoSerif = Noto_Serif_KR({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...createMetadata('/', pageSeo['/'].title, pageSeo['/'].description),
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: '자연미피부바디 | 25년 약손의 깊이',
     description: '몸의 변화를 이해하는 산전·산후 집중관리와 1:1 맞춤 상담',
@@ -39,7 +49,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim().toUpperCase();
   const validGaMeasurementId = gaMeasurementId && /^G-[A-Z0-9]+$/.test(gaMeasurementId)
     ? gaMeasurementId
     : undefined;

@@ -5,6 +5,8 @@ export type BlogPost = {
   summary: string;
   date: string;
   readTime: string;
+  image: string;
+  imageAlt: string;
   intro: string;
   sections: { heading: string; paragraphs: string[]; points?: string[] }[];
 };
@@ -17,6 +19,8 @@ export const blogPosts: BlogPost[] = [
     summary: '임신 주수부터 그날의 컨디션까지, 편안한 상담을 위해 준비하면 좋은 내용을 정리했습니다.',
     date: '2026.09.09',
     readTime: '3분',
+    image: '/images/blog-prenatal-care.jpg',
+    imageAlt: '산전관리 상담을 위해 쿠션과 수건을 정돈한 베드',
     intro: '산전관리는 프로그램을 먼저 고르는 것보다 현재의 몸 상태를 정확히 이야기하는 과정이 중요합니다. 예약 상담 전 아래 내용을 가볍게 확인해 보세요.',
     sections: [
       { heading: '현재 임신 주수와 경과', paragraphs: ['임신 주수와 최근 진료에서 들은 안내를 함께 알려주세요. 의료진에게 안정이나 활동 제한을 안내받았다면 관리 예약 전에 반드시 공유해 주셔야 합니다.'] },
@@ -31,6 +35,8 @@ export const blogPosts: BlogPost[] = [
     summary: '출산 방법과 회복 속도는 모두 다릅니다. 상담에서 자연미가 먼저 묻는 내용을 소개합니다.',
     date: '2026.09.09',
     readTime: '4분',
+    image: '/images/blog-postnatal-care.jpg',
+    imageAlt: '산후관리 전 편안한 휴식을 위해 준비한 수건과 차',
     intro: '출산 후에는 빠른 변화를 목표로 하기보다 몸의 회복 단계와 일상에서 느끼는 불편을 차분히 살피는 것이 먼저입니다.',
     sections: [
       { heading: '출산 방법과 현재 회복 단계', paragraphs: ['자연분만과 제왕절개는 회복 과정에서 주의할 부분이 다를 수 있습니다. 출산 시점과 경과, 의료진의 안내를 확인한 뒤 가능한 관리 범위를 정합니다.'] },
@@ -45,6 +51,8 @@ export const blogPosts: BlogPost[] = [
     summary: '복장, 식사, 도착 시간처럼 관리 전후에 알아두면 좋은 기본 안내입니다.',
     date: '2026.09.09',
     readTime: '3분',
+    image: '/images/blog-comfortable-care.jpg',
+    imageAlt: '편안한 관리 방문을 위해 준비한 옷과 물, 수건',
     intro: '특별한 준비보다 몸과 마음이 서두르지 않도록 여유를 두는 것이 좋습니다. 자연미를 방문하는 날 참고할 수 있는 기본 안내입니다.',
     sections: [
       { heading: '조이지 않는 편안한 복장', paragraphs: ['갈아입기 쉽고 몸을 조이지 않는 옷을 권합니다. 필요한 준비물은 예약한 프로그램에 따라 상담 시 별도로 알려드립니다.'] },

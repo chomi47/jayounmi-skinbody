@@ -107,6 +107,13 @@ export const businessJsonLd = {
   logo: absoluteUrl('/images/natural-beauty-logo.png'),
   image: absoluteUrl(OG_IMAGE),
   description: pageSeo['/'].description,
+  telephone: '+82-10-5131-7117',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '신매로 8길 8-5',
+    addressLocality: '대구광역시',
+    addressCountry: 'KR',
+  },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: '자연미피부바디 관리 프로그램',
