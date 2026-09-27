@@ -58,6 +58,7 @@ export default function RootLayout({
     <html lang="ko">
       {validGaMeasurementId && (
         <head>
+          <meta name="naver-site-verification" content="ab5e290b9829c682205ed20ce1a74d58590ee135" />
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${validGaMeasurementId}`} />
           <script
             dangerouslySetInnerHTML={{
