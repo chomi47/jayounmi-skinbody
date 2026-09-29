@@ -2,6 +2,7 @@ import { Menu, MessageCircle } from 'lucide-react';
 
 const nav = [
   ['자연미 소개', '/about'],
+  ['얼굴윤곽 관리', '/face-care'],
   ['산전관리', '/prenatal'],
   ['산후관리', '/postnatal'],
   ['체형·약손관리', '/body-care'],

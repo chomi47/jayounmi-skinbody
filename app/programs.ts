@@ -3,10 +3,24 @@ export type CareProgram = {
   description: string;
   price: number;
   durationMinutes?: number;
-  path: '/prenatal' | '/postnatal' | '/body-care';
+  path: '/face-care' | '/prenatal' | '/postnatal' | '/body-care';
 };
 
 export const CARE_PROGRAMS: CareProgram[] = [
+  {
+    name: '약손 얼굴윤곽 관리',
+    description: '오랫동안 이어온 약손의 얼굴관리 경험을 바탕으로, 그날의 피부 상태와 얼굴 라인을 살펴 손으로 세심하게 관리합니다. 얼굴에 집중해 관리받고 싶은 분께 추천합니다.',
+    durationMinutes: 70,
+    price: 100000,
+    path: '/face-care',
+  },
+  {
+    name: '약손 페이스&백 밸런스',
+    description: '얼굴과 등 부위를 함께 관리하는 약손 프로그램',
+    durationMinutes: 60,
+    price: 70000,
+    path: '/body-care',
+  },
   {
     name: '산전관리',
     description: '현재 상태에 맞춘 편안한 자세와 부위별 관리',
@@ -39,12 +53,6 @@ export const CARE_PROGRAMS: CareProgram[] = [
     description: '얼굴과 바디를 함께 살피는 시그니처 토탈케어',
     durationMinutes: 150,
     price: 220000,
-    path: '/body-care',
-  },
-  {
-    name: '약손 페이스&백 밸런스',
-    description: '얼굴과 등 부위를 함께 관리하는 약손 프로그램',
-    price: 70000,
     path: '/body-care',
   },
 ];

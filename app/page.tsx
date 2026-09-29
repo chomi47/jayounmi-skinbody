@@ -4,9 +4,9 @@ import { SiteHeader } from './components/SiteHeader';
 import { businessJsonLd, JsonLd } from './seo';
 
 const programs = [
-  { image: '/images/prenatal-care-identity.png', alt: '옆으로 편안하게 누운 고객의 양쪽 다리를 관리하는 산전관리 장면', eyebrow: '산전관리', title: '산전관리', text: '임신 중 달라진 몸을 편안하게 살핍니다.', href: '/prenatal' },
-  { image: '/images/postnatal-care-identity.png', alt: '옆으로 편안히 누운 고객이 왼팔을 이불 아래에 두고 어깨와 등을 관리받는 산후관리 장면', eyebrow: '산후관리', title: '산후관리', text: '회복 시기와 생활 리듬에 맞춰 안내합니다.', href: '/postnatal' },
-  { image: '/images/body-care-clothed-final.jpg', alt: '관리복을 입고 엎드린 고객의 어깨와 등을 손으로 관리하는 장면', eyebrow: '체형·약손관리', title: '체형·약손관리', text: '일상에 쌓인 긴장과 균형을 살핍니다.', href: '/body-care' },
+  { image: '/images/face-neck-hands.jpg', alt: '고객의 얼굴과 목 주변을 손으로 세심하게 관리하는 장면', eyebrow: '얼굴관리', title: '약손 얼굴윤곽 관리', text: '오랫동안 이어온 약손의 얼굴관리 경험을 바탕으로, 피부 상태와 얼굴 라인을 세심하게 살핍니다.', href: '/face-care' },
+  { image: '/images/prenatal-care-identity.png', alt: '옆으로 편안하게 누운 고객의 양쪽 다리를 관리하는 산전관리 장면', eyebrow: '산전관리 · 산후관리', title: '산전관리와 산후관리', text: '산전관리와 산후관리는 각각 현재 상태와 시기에 맞춰 상담하고 안내합니다.', href: '/programs' },
+  { image: '/images/body-care-clothed-final.jpg', alt: '관리복을 입고 엎드린 고객의 어깨와 등을 손으로 관리하는 장면', eyebrow: '전신관리', title: '전신 바디 밸런스', text: '얼굴관리를 포함해 전신의 균형을 한 흐름으로 살핍니다.', href: '/body-care' },
 ];
 
 export default function Home() {
@@ -18,24 +18,23 @@ export default function Home() {
       <section className="hero">
         <picture className="hero-media">
           <source media="(max-width: 640px)" srcSet="/images/hero-decollete-care-mobile-identity.png" />
-          <img src="/images/hero-decollete-care-desktop-identity.png" alt="25년 경력의 대표 원장이 바로 누운 고객의 목과 쇄골, 어깨를 직접 관리하는 모습" />
+          <img src="/images/hero-decollete-care-desktop-identity.png" alt="25년 피부·바디 관리 경력의 대표 원장이 바로 누운 고객의 목과 쇄골, 어깨를 직접 관리하는 모습" />
         </picture>
         <div className="hero-wash" />
         <div className="hero-copy">
-          <p className="eyebrow">몸의 회복이 삶의 회복입니다.</p>
-          <h1>몸의 변화를 이해하는<br/><em>25년 약손의 깊이</em></h1>
-          <p className="lead">산전부터 산후 회복까지,<br className="desktop-only"/> 지금의 몸에 맞춰 편안하게 관리합니다.</p>
+          <h1><span className="title-line">대구 수성구 신매동,</span><span className="title-line"><em>25년 경력 약손의</em></span><span className="title-line"><em>피부·바디 관리</em></span></h1>
+          <p className="lead">오래 해온 얼굴·바디 관리부터 새롭게 준비한 산전·산후 맞춤관리까지, 한 분씩 상담하고 직접 관리합니다.</p>
           <div className="hero-actions">
             <a className="primary-button" href="/contact">카카오톡 상담예약 <ArrowRight size={18}/></a>
             <a className="text-link" href="/about">자연미 이야기 <ArrowRight size={16}/></a>
           </div>
-          <div className="trust-line"><span>25년 경력</span><span>산전·산후 집중관리</span><span>1:1 맞춤 상담</span></div>
+          <div className="trust-line"><span>산전·산후 맞춤관리</span><span>1:1 상담·직접 관리</span></div>
         </div>
       </section>
 
       <section className="intro section-shell">
-        <div><p className="eyebrow">몸의 모든 순간을 위한 관리</p><h2><span className="title-line">변화하는 몸의 순간마다</span><span className="title-line">필요한 돌봄을 제안합니다</span></h2></div>
-        <p>오늘의 컨디션을 먼저 듣고, 한 분씩 맞춰 관리합니다.</p>
+        <div><p className="eyebrow">자연미의 관리</p><h2><span className="title-line">얼굴부터 산전·산후,</span><span className="title-line">전신 바디 밸런스까지</span></h2></div>
+        <p>오래 해온 피부·바디 관리 경험을 바탕으로 오늘의 상태를 먼저 듣고, 한 분씩 맞춰 관리합니다.</p>
       </section>
 
       <section className="program-grid section-shell">
