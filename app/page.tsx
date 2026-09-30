@@ -1,10 +1,12 @@
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, CalendarCheck } from 'lucide-react';
 import { blogPosts } from './blog/posts';
 import { SiteHeader } from './components/SiteHeader';
 import { businessJsonLd, JsonLd } from './seo';
 
+const NAVER_RESERVATION_URL = 'https://booking.naver.com/booking/13/bizes/1741377';
+
 const programs = [
-  { image: '/images/face-neck-hands.jpg', alt: '고객의 얼굴과 목 주변을 손으로 세심하게 관리하는 장면', eyebrow: '얼굴관리', title: '약손 얼굴윤곽 관리', text: '오랫동안 이어온 약손의 얼굴관리 경험을 바탕으로, 피부 상태와 얼굴 라인을 세심하게 살핍니다.', href: '/face-care' },
+  { image: '/images/face-neck-hands.jpg', alt: '고객의 얼굴과 목 주변을 손으로 세심하게 관리하는 장면', eyebrow: '얼굴관리', title: '약손 얼굴윤곽 관리', text: '25년간 쌓아온 얼굴 관리 경험을 바탕으로, 피부 상태와 얼굴 라인을 세심하게 살핍니다.', href: '/face-care' },
   { image: '/images/prenatal-care-identity.png', alt: '옆으로 편안하게 누운 고객의 양쪽 다리를 관리하는 산전관리 장면', eyebrow: '산전관리 · 산후관리', title: '산전관리와 산후관리', text: '산전관리와 산후관리는 각각 현재 상태와 시기에 맞춰 상담하고 안내합니다.', href: '/programs' },
   { image: '/images/body-care-clothed-final.jpg', alt: '관리복을 입고 엎드린 고객의 어깨와 등을 손으로 관리하는 장면', eyebrow: '전신관리', title: '전신 바디 밸런스', text: '얼굴관리를 포함해 전신의 균형을 한 흐름으로 살핍니다.', href: '/body-care' },
 ];
@@ -23,18 +25,19 @@ export default function Home() {
         <div className="hero-wash" />
         <div className="hero-copy">
           <h1><span className="title-line">대구 수성구 신매동,</span><span className="title-line"><em>25년 경력 약손의</em></span><span className="title-line"><em>피부·바디 관리</em></span></h1>
-          <p className="lead">오래 해온 얼굴·바디 관리부터 새롭게 준비한 산전·산후 맞춤관리까지, 한 분씩 상담하고 직접 관리합니다.</p>
+          <p className="lead">얼굴과 바디를 살피고, 지금 필요한 관리를 함께 찾아드립니다. 산전 산후 관리도 편안하게 상담해 주세요.</p>
           <div className="hero-actions">
-            <a className="primary-button" href="/contact">카카오톡 상담예약 <ArrowRight size={18}/></a>
+            <a className="primary-button" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer">네이버 예약 <ArrowRight size={18}/></a>
             <a className="text-link" href="/about">자연미 이야기 <ArrowRight size={16}/></a>
           </div>
+          <small className="booking-helper booking-helper--hero">네이버 예약 페이지에서 자연미 피부바디를 눌러 날짜와 시간을 선택해 주세요.</small>
           <div className="trust-line"><span>산전·산후 맞춤관리</span><span>1:1 상담·직접 관리</span></div>
         </div>
       </section>
 
       <section className="intro section-shell">
         <div><p className="eyebrow">자연미의 관리</p><h2><span className="title-line">얼굴부터 산전·산후,</span><span className="title-line">전신 바디 밸런스까지</span></h2></div>
-        <p>오래 해온 피부·바디 관리 경험을 바탕으로 오늘의 상태를 먼저 듣고, 한 분씩 맞춰 관리합니다.</p>
+        <p>25년간 쌓아온 피부 바디 관리 경험을 바탕으로, 그날의 몸 상태에 맞춰 한 분씩 관리합니다.</p>
       </section>
 
       <section className="program-grid section-shell">
@@ -53,7 +56,7 @@ export default function Home() {
       </section>
 
       <section className="steps section-shell">
-        <div><p className="eyebrow">자연미의 관리 과정</p><h2>안심하고 받을 수 있도록<br/>처음부터 천천히</h2></div>
+        <div><p className="eyebrow">자연미의 관리 과정</p><h2><span className="steps-title-line">안심하고 받을 수 있도록</span><span className="steps-title-line">처음부터 천천히</span></h2></div>
         <ol><li><b>01</b><span><strong>현재 상태 상담</strong>오늘의 컨디션을 확인합니다.</span></li><li><b>02</b><span><strong>맞춤 관리 안내</strong>범위와 자세를 안내합니다.</span></li><li><b>03</b><span><strong>편안한 약손관리</strong>몸의 반응에 맞춰 진행합니다.</span></li></ol>
       </section>
 
@@ -64,9 +67,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="final-cta"><p className="eyebrow">나를 위한 편안한 시간</p><h2>지금의 몸에 맞는 관리가<br/>궁금하신가요?</h2><p>현재 상태부터 편안히 들려주세요.</p><a className="primary-button" href="/contact">카카오톡으로 상담하기 <ArrowRight size={18}/></a></section>
-      <footer><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><div className="footer-info"><p>자연미 피부바디 · 예약 필수 · 1:1 프라이빗 관리</p><p><a href="tel:01051317117">010-5131-7117</a><span>대구 신매로 8길 8-5</span></p><p><span>평일 09:00 - 20:00</span><span>토요일 09:00 - 16:00</span></p></div><p className="disclaimer">본 관리는 의료행위가 아니며, 개인의 상태에 따라 상담 후 진행됩니다.</p></footer>
-      <a className="mobile-fixed-cta" href="/contact"><MessageCircle size={19}/> 카카오톡 상담예약</a>
+      <section className="final-cta"><p className="eyebrow">나를 위한 편안한 시간</p><h2>지금의 몸에 맞는 관리가<br/>궁금하신가요?</h2><p>현재 상태부터 편안히 들려주세요.</p><a className="primary-button" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer">네이버 예약 <ArrowRight size={18}/></a><small className="booking-helper">네이버 예약 페이지에서 자연미 피부바디를 눌러 날짜와 시간을 선택해 주세요.</small></section>
+      <footer><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><div className="footer-info"><p>자연미 피부바디 · <span className="footer-reservation-required">예약 필수</span> · 1:1 프라이빗 관리</p><p><a href="tel:01051317117">010-5131-7117</a><span>대구 신매로 8길 8-5</span></p><p><span>평일 09:00 - 20:00</span><span>토요일 09:00 - 16:00</span></p></div></footer>
+      <a className="mobile-fixed-cta" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer"><CalendarCheck size={19}/> 네이버 예약</a>
     </main>
   );
 }

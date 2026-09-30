@@ -9,7 +9,7 @@ export type CareProgram = {
 export const CARE_PROGRAMS: CareProgram[] = [
   {
     name: '약손 얼굴윤곽 관리',
-    description: '오랫동안 이어온 약손의 얼굴관리 경험을 바탕으로, 그날의 피부 상태와 얼굴 라인을 살펴 손으로 세심하게 관리합니다. 얼굴에 집중해 관리받고 싶은 분께 추천합니다.',
+    description: '25년간 쌓아온 얼굴 관리 경험을 바탕으로, 그날의 피부 상태와 얼굴 라인을 살펴 손으로 세심하게 관리합니다. 얼굴에 집중해 관리받고 싶은 분께 추천합니다.',
     durationMinutes: 70,
     price: 100000,
     path: '/face-care',

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ArrowRight, Check, Clock3, MapPin, MessageCircle, Phone, Sparkles } from 'lucide-react';
+import { ArrowRight, CalendarCheck, Check, Clock3, MapPin, Phone, Sparkles } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { PageHero } from '../components/PageHero';
 import { SiteHeader } from '../components/SiteHeader';
@@ -36,10 +36,10 @@ const services = {
   },
   'face-care': {
     eyebrow:'얼굴관리', title:'약손 얼굴윤곽 관리', headline:'오랫동안 이어온 약손으로\n얼굴을 세심하게 살핍니다',
-    intro:'오랫동안 이어온 약손의 얼굴관리 경험을 바탕으로, 그날의 피부 상태와 얼굴 라인을 살펴 손으로 세심하게 관리합니다. 얼굴에 집중해 관리받고 싶은 분께 추천합니다.',
-    needs:['얼굴에 집중한 손 관리를 받고 싶은 분','그날의 피부 상태를 살펴 세심하게 관리받고 싶은 분','얼굴 라인을 편안하게 살피는 관리를 원하는 분'],
+    intro:'25년간 쌓아온 얼굴 관리 경험을 바탕으로, 그날의 피부 상태와 얼굴 라인을 살펴 세심하게 관리합니다. 얼굴에 집중해 관리받고 싶은 분께 추천합니다.',
+    needs:['얼굴에 집중한 맞춤 관리를 받고 싶은 분','그날의 피부 상태를 살펴 세심하게 관리받고 싶은 분','얼굴 라인을 편안하게 살피는 관리를 원하는 분'],
     discomfort:'피부 상태와 얼굴의 긴장감은 컨디션과 생활 습관에 따라 달라질 수 있습니다. 자연미는 정해진 변화를 약속하기보다, 관리 전 그날의 상태와 원하는 방향을 충분히 듣습니다.',
-    method:'피부 상태와 민감한 부위를 먼저 확인하고, 손으로 얼굴 라인을 따라 편안한 강도로 세심하게 진행합니다. 관리 중에도 불편함이 없는지 계속 확인합니다.',
+    method:'피부 상태와 민감한 부위를 먼저 확인하고, 얼굴 라인을 따라 편안한 강도로 세심하게 진행합니다. 관리 중에도 불편함이 없는지 계속 확인합니다.',
     caution:'피부 시술 직후이거나 염증, 상처, 심한 자극이 있다면 관리 전 반드시 알려주세요. 필요한 경우 관리를 미루고 의료진과 먼저 상담해 주세요.',
     faq:[['관리 시간은 어떻게 되나요?','약손 얼굴윤곽 관리는 70분 동안 진행합니다.'],['얼굴만 집중해서 관리받을 수 있나요?','네. 얼굴에 집중해 관리받고 싶은 분을 위한 단독 프로그램입니다.'],['강도는 조절할 수 있나요?','관리 전 원하는 강도와 민감한 부위를 확인하고, 진행 중에도 편안함을 계속 묻습니다.']]
   }
@@ -102,8 +102,7 @@ const contactFeatureImage: PageFeatureImage = {
 const PHONE_DISPLAY = '010-5131-7117';
 const PHONE_HREF = 'tel:01051317117';
 const ADDRESS = '대구 신매로 8길 8-5';
-// 네이버 예약의 실제 공개 URL이 확인되면 이 값만 교체합니다.
-const NAVER_RESERVATION_URL = '';
+const NAVER_RESERVATION_URL = 'https://booking.naver.com/booking/13/bizes/1741377';
 
 const pageNames = {
   about: '자연미 소개',
@@ -116,8 +115,8 @@ const pageNames = {
   contact: '상담예약',
 } as const;
 
-function Footer(){return <><footer><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><div className="footer-info"><p>자연미 피부바디 · 예약 필수 · 1:1 프라이빗 관리</p><p><a href={PHONE_HREF}>{PHONE_DISPLAY}</a><span>{ADDRESS}</span></p><p><span>평일 09:00 - 20:00</span><span>토요일 09:00 - 16:00</span></p></div><p className="disclaimer">본 관리는 의료행위가 아니며, 개인의 상태에 따라 상담 후 진행됩니다.</p></footer><a className="mobile-fixed-cta" href="/contact"><MessageCircle size={19}/> 카카오톡 상담예약</a></>}
-function Consultation(){return <section className="final-cta"><p className="eyebrow">1:1 상담예약</p><h2>지금의 상태부터<br/>편안히 이야기해 주세요</h2><p>관리 가능 시기와 프로그램은 1:1 상담 후 안내합니다.</p><a className="primary-button" href="/contact">카카오톡 상담예약 <ArrowRight size={18}/></a></section>}
+function Footer(){return <><footer><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><div className="footer-info"><p>자연미 피부바디 · <span className="footer-reservation-required">예약 필수</span> · 1:1 프라이빗 관리</p><p><a href={PHONE_HREF}>{PHONE_DISPLAY}</a><span>{ADDRESS}</span></p><p><span>평일 09:00 - 20:00</span><span>토요일 09:00 - 16:00</span></p></div></footer><a className="mobile-fixed-cta" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer"><CalendarCheck size={19}/> 네이버 예약</a></>}
+function Consultation(){return <section className="final-cta"><p className="eyebrow">1:1 상담예약</p><h2>지금의 상태부터<br/>편안히 이야기해 주세요</h2><p>관리 가능 시기와 프로그램은 1:1 상담 후 안내합니다.</p><a className="primary-button" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer">네이버 예약 <ArrowRight size={18}/></a><small className="booking-helper">네이버 예약 페이지에서 자연미 피부바디를 눌러 날짜와 시간을 선택해 주세요.</small></section>}
 
 function FeatureImage({image}:{image:PageFeatureImage}){
   return <figure className={`page-feature-image section-shell${image.portrait ? ' page-feature-image--portrait' : ''}${image.fullFrame ? ' page-feature-image--full-frame' : ''}`}><img src={image.src} alt={image.alt}/></figure>;
@@ -141,7 +140,7 @@ function Programs(){return <main><JsonLd data={programCatalogJsonLd}/><SiteHeade
 
 function Reviews(){return <main><SiteHeader/><PageHero eyebrow="후기와 자주 묻는 질문" titleLines={['예약 전의 걱정을','차분히 풀어드립니다']} description="후기는 실제 이용 고객의 동의를 받은 원문만 게시합니다."/><FeatureImage image={reviewsFeatureImage}/><section className="soft-block testimonial-placeholder"><p className="eyebrow">실제 관리 고객 후기</p><h2>“어제 어깨를 풀어서 그런지 오늘 한결 가벼워졌어요. 감사해요. ^^~”</h2></section><section className="soft-block testimonial-placeholder"><p className="eyebrow">실제 관리 고객 후기</p><h2>“원장님이 관리 좋았어요^^<br/>마사지 시원하게 하시고<br/>설명도 잘해주셔서<br/>감사해요~~~”</h2></section><section className="content-block section-shell faq"><div className="section-title"><p className="eyebrow">자주 묻는 질문</p><h2>예약 전 자주 묻는 질문</h2></div>{[['상담만 먼저 받아도 되나요?','네. 현재 상태와 희망 사항을 먼저 이야기한 뒤 예약 여부를 결정하셔도 됩니다.'],['준비해야 할 것이 있나요?','예약 시 프로그램에 맞는 준비사항을 개별 안내해 드립니다.'],['관리를 미뤄야 하는 경우가 있나요?','발열, 급성 통증, 출혈 등 평소와 다른 증상이 있다면 관리를 미루고 의료진과 먼저 상담해 주세요.'],['예약 변경은 어떻게 하나요?','운영 정책이 확정되면 변경 가능 시간과 방법을 정확히 안내하겠습니다.']].map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</section><Consultation/><Footer/></main>}
 
-function Contact(){return <main><SiteHeader/><PageHero eyebrow="상담예약" titleLines={['몸의 상태를 먼저 듣는','1:1 상담예약']} description="프로그램을 정하지 못했어도 괜찮습니다. 현재의 불편과 원하는 시간을 알려주세요."/><FeatureImage image={contactFeatureImage}/><section className="content-block contact-grid section-shell"><div><p className="eyebrow">예약 안내</p><h2>상담예약 안내</h2><ol className="contact-steps"><li><b>1</b><span><strong>카카오톡 상담</strong>현재 상태와 희망 일정을 남겨주세요.</span></li><li><b>2</b><span><strong>프로그램 안내</strong>관리 가능 여부와 구성을 안내합니다.</span></li><li><b>3</b><span><strong>예약 확정</strong>날짜와 시간을 확인하면 예약이 완료됩니다.</span></li></ol></div><aside className="contact-card"><MessageCircle size={30}/><h3>카카오톡 상담예약</h3><p>공식 카카오톡 채널 주소가 확인되면 바로 연결됩니다.</p><span className="pending-button">채널 주소 연결 필요</span><hr/><p><Clock3 size={17}/> 평일 09:00 - 20:00</p><p><Clock3 size={17}/> 토요일 09:00 - 16:00</p><p><strong>예약 필수 · 1:1 프라이빗 관리</strong></p><p><Phone size={17}/> 전화 · <a href={PHONE_HREF}>{PHONE_DISPLAY}</a></p><p><MapPin size={17}/> 주소 · {ADDRESS}</p>{NAVER_RESERVATION_URL ? <a id="naver-reservation" className="naver-reservation-button" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer">네이버 예약 <ArrowRight size={17}/></a> : <span id="naver-reservation" className="pending-button naver-reservation-pending">네이버 예약 링크 연결 위치</span>}</aside></section><Footer/></main>}
+function Contact(){return <main><SiteHeader/><PageHero eyebrow="상담예약" titleLines={['몸의 상태를 먼저 듣는','1:1 상담예약']} description="프로그램을 정하지 못했어도 괜찮습니다. 현재의 불편과 원하는 시간을 알려주세요."/><FeatureImage image={contactFeatureImage}/><section className="content-block contact-grid section-shell"><div><p className="eyebrow">예약 안내</p><h2>상담예약 안내</h2><ol className="contact-steps"><li><b>1</b><span><strong>네이버 예약</strong>자연미 피부바디를 눌러 희망 일정을 선택해 주세요.</span></li><li><b>2</b><span><strong>프로그램 안내</strong>관리 가능 여부와 구성을 안내합니다.</span></li><li><b>3</b><span><strong>예약 확정</strong>날짜와 시간을 확인하면 예약이 완료됩니다.</span></li></ol></div><aside className="contact-card"><CalendarCheck size={30}/><h3>네이버 예약</h3><p>네이버 예약 페이지에서 자연미 피부바디를 눌러 날짜와 시간을 선택해 주세요.</p><a className="naver-reservation-button" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer">네이버 예약 <ArrowRight size={17}/></a><hr/><p><Clock3 size={17}/> 평일 09:00 - 20:00</p><p><Clock3 size={17}/> 토요일 09:00 - 16:00</p><p><strong><span className="footer-reservation-required">예약 필수</span> · 1:1 프라이빗 관리</strong></p><p><Phone size={17}/> 전화 · <a href={PHONE_HREF}>{PHONE_DISPLAY}</a></p><p><MapPin size={17}/> 주소 · {ADDRESS}</p></aside></section><Footer/></main>}
 
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
   const {slug}=await params;

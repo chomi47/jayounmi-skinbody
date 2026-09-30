@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, CalendarCheck } from 'lucide-react';
 import { blogPosts } from './posts';
 import { PageHero } from '../components/PageHero';
 import { SiteHeader } from '../components/SiteHeader';
 import { breadcrumbJsonLd, createMetadata, JsonLd, pageSeo } from '../seo';
 
-function Footer(){return <><footer><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><div className="footer-info"><p>자연미 피부바디 · 예약 필수 · 1:1 프라이빗 관리</p><p><a href="tel:01051317117">010-5131-7117</a><span>대구 신매로 8길 8-5</span></p><p><span>평일 09:00 - 20:00</span><span>토요일 09:00 - 16:00</span></p></div><p className="disclaimer">본 관리는 의료행위가 아니며, 개인의 상태에 따라 상담 후 진행됩니다.</p></footer><a className="mobile-fixed-cta" href="/contact"><MessageCircle size={19}/> 카카오톡 상담예약</a></>}
+const NAVER_RESERVATION_URL = 'https://booking.naver.com/booking/13/bizes/1741377';
+
+function Footer(){return <><footer><a className="brand" href="/" aria-label="자연미피부바디 홈"><img className="brand-logo" src="/images/natural-beauty-logo.png" alt="자연미피부바디" /></a><div className="footer-info"><p>자연미 피부바디 · <span className="footer-reservation-required">예약 필수</span> · 1:1 프라이빗 관리</p><p><a href="tel:01051317117">010-5131-7117</a><span>대구 신매로 8길 8-5</span></p><p><span>평일 09:00 - 20:00</span><span>토요일 09:00 - 16:00</span></p></div></footer><a className="mobile-fixed-cta" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer"><CalendarCheck size={19}/> 네이버 예약</a></>}
 
 export const metadata: Metadata = createMetadata('/blog',pageSeo['/blog'].title,pageSeo['/blog'].description);
 

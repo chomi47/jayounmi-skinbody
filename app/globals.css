@@ -106,11 +106,21 @@ body { width:100%; min-width:0; zoom:1; }
 footer { padding-inline:max(24px,calc((100% - var(--content-max))/2)); }
 footer>p,footer .footer-info p { margin:0; overflow-wrap:anywhere; color:#c9bfb8; font-size:16px; }
 .footer-info { display:grid; gap:7px; }
+.footer-info p:first-child { word-break:keep-all; overflow-wrap:normal; text-wrap:balance; }
+.footer-reservation-required { white-space:nowrap; }
 .footer-info p:not(:first-child) { display:flex; flex-wrap:wrap; gap:7px 16px; }
 .footer-info a { color:#fff; font-weight:700; }
 .footer-info span { color:#c9bfb8; }
 .contact-card>p a { font-weight:800; text-decoration:underline; text-underline-offset:3px; }
 .naver-reservation-button { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:24px; padding:15px 18px; background:#03c75a; color:#fff; font-weight:800; }
+.booking-helper { display:block; max-width:520px; margin:14px auto 0; color:var(--muted); font-size:14px; line-height:1.65; word-break:keep-all; text-wrap:pretty; }
+.booking-helper--hero { margin-inline:0; }
+.steps-title-line { display:block; white-space:nowrap; }
+.program-card h3,
+.program-content>p:not(.eyebrow) { word-break:keep-all; overflow-wrap:normal; }
+.program-card h3 { text-wrap:balance; }
+.program-content>p:not(.eyebrow) { text-wrap:pretty; }
+.price-table span { word-break:keep-all; overflow-wrap:normal; text-wrap:pretty; }
 .naver-reservation-pending { margin-top:24px; background:#66786b; }
 .page-feature-image--full-frame { max-width:var(--content-max); aspect-ratio:4/3; }
 .page-feature-image.page-feature-image--portrait { max-width:760px; }
@@ -190,4 +200,6 @@ footer>p,footer .footer-info p { margin:0; overflow-wrap:anywhere; color:#c9bfb8
   .intro>p { max-width:340px; white-space:normal; text-wrap:wrap; }
   .page-hero h1 { font-size:clamp(27px,7.35vw,30px); }
   .testimonial-placeholder h2 { font-size:clamp(27px,7.35vw,30px); }
+  .steps h2 { font-size:27px; }
+  .booking-helper { max-width:320px; font-size:13px; }
 }

@@ -1,4 +1,6 @@
-import { Menu, MessageCircle } from 'lucide-react';
+import { CalendarCheck, Menu } from 'lucide-react';
+
+const NAVER_RESERVATION_URL = 'https://booking.naver.com/booking/13/bizes/1741377';
 
 const nav = [
   ['자연미 소개', '/about'],
@@ -25,10 +27,10 @@ export function SiteHeader() {
         <nav className="desktop-nav" aria-label="주요 메뉴">
           {nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
         </nav>
-        <a className="header-cta" href="/contact"><MessageCircle size={17}/> 상담예약</a>
+        <a className="header-cta" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer"><CalendarCheck size={17}/> 네이버 예약</a>
         <details className="mobile-menu">
           <summary aria-label="메뉴 열기"><Menu/></summary>
-          <nav>{nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}<a href="/contact">상담예약</a></nav>
+          <nav>{nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}<a href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer">네이버 예약</a></nav>
         </details>
       </div>
     </header>
