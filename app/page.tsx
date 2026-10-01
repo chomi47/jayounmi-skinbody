@@ -24,8 +24,9 @@ export default function Home() {
         </picture>
         <div className="hero-wash" />
         <div className="hero-copy">
-          <h1><span className="title-line">대구 수성구 신매동,</span><span className="title-line"><em>25년 경력 약손의</em></span><span className="title-line"><em>피부·바디 관리</em></span></h1>
-          <p className="lead">얼굴과 바디를 살피고, 지금 필요한 관리를 함께 찾아드립니다. 산전 산후 관리도 편안하게 상담해 주세요.</p>
+          <p className="eyebrow hero-location">대구 수성구 신매동</p>
+          <h1><span className="title-line"><em>25년 경력 약손의</em></span><span className="title-line"><em>피부·바디 관리</em></span></h1>
+          <p className="lead">얼굴과 바디를 세심하게 살피며, 지금 필요한 관리를 함께 찾습니다. 산전·산후관리도 편안하게 상담해 주세요.</p>
           <div className="hero-actions">
             <a className="primary-button" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer">네이버 예약 <ArrowRight size={18}/></a>
             <a className="text-link" href="/about">자연미 이야기 <ArrowRight size={16}/></a>
