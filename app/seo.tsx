@@ -57,6 +57,8 @@ export function createMetadata(
   title: string,
   description: string,
   type: 'website' | 'article' = 'website',
+  image = OG_IMAGE,
+  imageAlt = '자연미피부바디 산전·산후 집중관리',
 ): Metadata {
   return {
     title,
@@ -69,13 +71,13 @@ export function createMetadata(
       type,
       locale: 'ko_KR',
       siteName: SITE_NAME,
-      images: [{ url: OG_IMAGE, width: 1734, height: 907, alt: '자연미피부바디 산전·산후 집중관리' }],
+      images: [{ url: image, alt: imageAlt }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [OG_IMAGE],
+      images: [image],
     },
   };
 }
