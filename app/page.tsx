@@ -4,6 +4,7 @@ import { SiteHeader } from './components/SiteHeader';
 import { businessJsonLd, JsonLd } from './seo';
 
 const NAVER_RESERVATION_URL = 'https://booking.naver.com/booking/13/bizes/1741377';
+const PHONE_HREF = 'tel:01051317117';
 
 const programs = [
   { image: '/images/face-neck-hands.jpg', alt: '고객의 얼굴과 목 주변을 손으로 세심하게 관리하는 장면', eyebrow: '얼굴관리', title: '약손 얼굴윤곽 관리', text: '25년간 쌓아온 얼굴 관리 경험을 바탕으로, 피부 상태와 얼굴 라인을 세심하게 살핍니다.', href: '/face-care' },
@@ -28,10 +29,10 @@ export default function Home() {
           <h1><span className="title-line"><em>25년 경력 약손의</em></span><span className="title-line"><em>피부·바디 관리</em></span></h1>
           <p className="lead">얼굴과 바디를 세심하게 살피며, 지금 필요한 관리를 함께 찾습니다. 산전·산후관리도 편안하게 상담해 주세요.</p>
           <div className="hero-actions">
-            <a className="primary-button" href={NAVER_RESERVATION_URL} target="_blank" rel="noreferrer">네이버 예약 <ArrowRight size={18}/></a>
+            <a className="primary-button" href={PHONE_HREF}>전화상담</a>
             <a className="text-link" href="/about">자연미 이야기 <ArrowRight size={16}/></a>
           </div>
-          <small className="booking-helper booking-helper--hero">네이버 예약 페이지에서 자연미 피부바디를 눌러 날짜와 시간을 선택해 주세요.</small>
+          <small className="booking-helper booking-helper--hero">관리 중에는 전화를 받기 어려울 수 있습니다. 부재 시 확인 후 연락드리겠습니다.</small>
           <div className="trust-line"><span>산전·산후 맞춤관리</span><span>1:1 상담·직접 관리</span></div>
         </div>
       </section>
