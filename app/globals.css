@@ -353,6 +353,14 @@ html { scroll-behavior:smooth; }
 .article-toc a:hover,
 .article-toc a.is-active { border-left-color:#6b4634; color:#6b4634; font-weight:800; background:rgba(107,70,52,.08); }
 .article-toc--mobile { display:none; }
+.article-image--after-title { margin-top:30px; aspect-ratio:3/2; }
+.article-lead+.article-lead { margin-top:1em; }
+.article-faq-list { display:grid; gap:18px; margin-top:8px; }
+.article-faq-list article { padding:24px 26px; border:1px solid #d8cec1; background:#f5f0e7; }
+.article-faq-list h3 { margin:0 0 10px; color:#4b382f; font-family:var(--font-serif); font-size:20px; line-height:1.55; word-break:keep-all; text-wrap:pretty; }
+.article-contact-line { margin-top:28px!important; }
+.article-contact-line strong { color:#4b382f; }
+.article-contact-line a { color:#6b4634; font-weight:800; text-decoration:underline; text-underline-offset:4px; }
 .next-posts { width:100%; max-width:920px; margin:70px auto 46px; padding-top:54px; border-top:1px solid var(--line); }
 .next-posts>.eyebrow { margin-bottom:12px; color:#6b574c; }
 .next-posts>h2 { margin:0 0 28px; font-family:var(--font-serif); font-size:32px; font-weight:600; }
@@ -379,6 +387,7 @@ html { scroll-behavior:smooth; }
   .article-toc--mobile[open] summary { border-bottom:1px solid #d8cec1; }
   .article-toc--mobile nav { padding:10px 12px 14px; }
   .article-body section { scroll-margin-top:88px; }
+  .article-image--after-title { margin-top:24px; }
   .next-posts { margin-top:54px; padding-top:44px; }
 }
 

@@ -65,7 +65,7 @@ export default function Home() {
       <section className="home-blog">
         <div className="section-shell">
           <div className="home-blog-heading"><div><p className="eyebrow">자연미 이야기</p><h2>몸을 이해하는<br/>자연미의 이야기</h2></div><a className="text-link" href="/blog">블로그 전체보기 <ArrowRight size={16}/></a></div>
-          <div className="home-blog-grid">{blogPosts.map((post)=><article key={post.id}><p className="post-meta"><span>{post.category}</span>{post.date}</p><h3><a href={`/blog/${post.id}`}>{post.title}</a></h3><a className="post-link" href={`/blog/${post.id}`}>글 읽기 <ArrowRight size={16}/></a></article>)}</div>
+          <div className="home-blog-grid">{blogPosts.slice(0,3).map((post)=><article key={post.id}><p className="post-meta"><span>{post.category}</span>{post.date}</p><h3><a href={`/blog/${post.id}`}>{post.title}</a></h3><a className="post-link" href={`/blog/${post.id}`}>글 읽기 <ArrowRight size={16}/></a></article>)}</div>
         </div>
       </section>
 
