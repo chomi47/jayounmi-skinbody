@@ -4,6 +4,7 @@ import { CARE_PROGRAMS } from './programs';
 export const SITE_URL = 'https://jayounmi-skinbody.com';
 export const SITE_NAME = '자연미피부바디';
 export const OG_IMAGE = '/og-image.png';
+export const HOME_OG_IMAGE = '/og-home-face-contour-20261012.png';
 
 export const pageSeo = {
   '/': {

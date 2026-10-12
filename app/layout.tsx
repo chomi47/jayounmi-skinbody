@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Noto_Sans_KR, Noto_Serif_KR } from 'next/font/google';
 import './globals.css';
-import { createMetadata, OG_IMAGE, pageSeo, SITE_URL } from './seo';
+import { createMetadata, HOME_OG_IMAGE, pageSeo, SITE_URL } from './seo';
 
 const notoSans = Noto_Sans_KR({
   variable: '--font-noto-sans',
@@ -28,19 +28,19 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: '자연미피부바디 | 25년 약손의 깊이',
-    description: '몸의 변화를 이해하는 산전·산후 집중관리와 1:1 맞춤 상담',
+    title: '대구 신매동 얼굴윤곽 관리 | 자연미 피부바디',
+    description: '피부·바디 관리 경력 25년 원장이 직접 관리하는 대구 신매동 1인 관리샵. 얼굴윤곽을 중심으로 산전·산후관리와 바디 밸런스를 함께 제공합니다.',
     url: '/',
     type: 'website',
     locale: 'ko_KR',
     siteName: '자연미피부바디',
-    images: [{ url: OG_IMAGE, width: 1734, height: 907, alt: '자연미피부바디 산전·산후 집중관리' }],
+    images: [{ url: HOME_OG_IMAGE, width: 1200, height: 630, alt: '자연미 피부바디 얼굴윤곽 관리' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자연미피부바디 | 25년 약손의 깊이',
-    description: '몸의 변화를 이해하는 산전·산후 집중관리와 1:1 맞춤 상담',
-    images: [OG_IMAGE],
+    title: '대구 신매동 얼굴윤곽 관리 | 자연미 피부바디',
+    description: '피부·바디 관리 경력 25년 원장이 직접 관리하는 대구 신매동 1인 관리샵. 얼굴윤곽을 중심으로 산전·산후관리와 바디 밸런스를 함께 제공합니다.',
+    images: [HOME_OG_IMAGE],
   },
 };
 
