@@ -59,6 +59,7 @@ export default function RootLayout({
       {validGaMeasurementId && (
         <head>
           <meta name="naver-site-verification" content="ab5e290b9829c682205ed20ce1a74d58590ee135" />
+          <meta name="facebook-domain-verification" content="6u92aye1yd8pn4xzb4przmizsf4e1n" />
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${validGaMeasurementId}`} />
           <script
             dangerouslySetInnerHTML={{
