@@ -7,7 +7,7 @@ const NAVER_RESERVATION_URL = 'https://booking.naver.com/booking/13/bizes/174137
 const PHONE_HREF = 'tel:01051317117';
 
 const programs = [
-  { image: '/images/face-neck-hands.jpg', alt: '고객의 얼굴과 목 주변을 손으로 세심하게 관리하는 장면', eyebrow: '얼굴관리', title: '약손 얼굴윤곽 관리', text: '25년간 쌓아온 얼굴 관리 경험을 바탕으로, 피부 상태와 얼굴 라인을 세심하게 살핍니다.', href: '/face-care' },
+  { image: '/images/face-neck-hands.jpg', alt: '고객의 얼굴과 목 주변을 손으로 세심하게 관리하는 장면', eyebrow: '얼굴관리', title: '얼굴윤곽 집중관리', text: '25년간 쌓아온 얼굴 관리 경험을 바탕으로, 피부 상태와 얼굴 라인을 세심하게 살핍니다.', href: '/face-care' },
   { image: '/images/prenatal-care-identity.png', alt: '옆으로 편안하게 누운 고객의 양쪽 다리를 관리하는 산전관리 장면', eyebrow: '산전관리 · 산후관리', title: '산전관리와 산후관리', text: '산전관리와 산후관리는 각각 현재 상태와 시기에 맞춰 상담하고 안내합니다.', href: '/programs' },
   { image: '/images/body-care-clothed-final.jpg', alt: '관리복을 입고 엎드린 고객의 어깨와 등을 손으로 관리하는 장면', eyebrow: '전신관리', title: '전신 바디 밸런스', text: '얼굴관리를 포함해 전신의 균형을 한 흐름으로 살핍니다.', href: '/body-care' },
 ];
