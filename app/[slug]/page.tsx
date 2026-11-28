@@ -30,18 +30,18 @@ const services = {
     intro:'자세와 생활 습관, 자주 불편한 부위를 상담한 뒤 전신 또는 얼굴을 포함한 관리 방향을 함께 정합니다.',
     needs:['오래 앉거나 서서 몸이 쉽게 뻐근한 분','전신의 균형을 편안하게 관리하고 싶은 분','얼굴과 바디를 한 흐름으로 받고 싶은 분'],
     discomfort:'반복되는 생활 자세는 특정 부위의 긴장과 피로감으로 이어질 수 있습니다. 자연미는 보이는 부분만이 아니라 몸 전체의 연결과 생활 습관을 함께 살핍니다.',
-    method:'정해진 강도를 적용하기보다 손으로 몸의 반응을 확인하며 진행합니다. 전신, 상체 집중, 하체 집중, 얼굴 포함 여부는 상담 후 구성합니다.',
+    method:'약손 바디 밸런스는 옷을 입고 전신을 수기로 관리합니다. 전신 바디 밸런스는 얼굴·등·복부·하체를 함께 관리하며, 강도와 주의사항은 상담 후 확인합니다.',
     caution:'본 관리는 진단이나 치료를 대신하지 않습니다. 지속되는 통증이나 급성 증상이 있다면 의료기관의 진료를 먼저 받아 주세요.',
-    faq:[['얼굴과 바디를 함께 받을 수 있나요?','가능합니다. 희망 부위와 시간을 상담해 한 흐름으로 구성합니다.'],['관리 강도는 선택할 수 있나요?','관리 전 원하는 강도와 민감한 부위를 확인하고, 진행 중에도 편안함을 계속 묻습니다.'],['산전·산후가 아니어도 예약 가능한가요?','네. 체형·전신·얼굴 약손관리는 일반 고객도 상담 후 예약할 수 있습니다.']]
+    faq:[['얼굴과 바디를 함께 받을 수 있나요?','네. 얼굴윤곽 & 등 관리(약 90분)와 전신 바디 밸런스(약 120분)를 안내합니다. 강도와 주의사항은 상담에서 확인합니다.'],['관리 강도는 선택할 수 있나요?','관리 전 원하는 강도와 민감한 부위를 확인하고, 진행 중에도 편안함을 계속 묻습니다.'],['산전·산후가 아니어도 예약 가능한가요?','네. 체형·전신·얼굴 약손관리는 일반 고객도 상담 후 예약할 수 있습니다.']]
   },
   'face-care': {
-    eyebrow:'얼굴관리', title:'약손 얼굴윤곽 관리', headline:'오랫동안 이어온 약손으로\n얼굴을 세심하게 살핍니다',
+    eyebrow:'얼굴관리', title:'얼굴윤곽 집중관리', headline:'오랫동안 이어온 약손으로\n얼굴을 세심하게 살핍니다',
     intro:'25년간 쌓아온 얼굴 관리 경험을 바탕으로, 그날의 피부 상태와 얼굴 라인을 살펴 세심하게 관리합니다. 얼굴에 집중해 관리받고 싶은 분께 추천합니다.',
     needs:['얼굴에 집중한 맞춤 관리를 받고 싶은 분','그날의 피부 상태를 살펴 세심하게 관리받고 싶은 분','얼굴 라인을 편안하게 살피는 관리를 원하는 분'],
     discomfort:'피부 상태와 얼굴의 긴장감은 컨디션과 생활 습관에 따라 달라질 수 있습니다. 자연미는 정해진 변화를 약속하기보다, 관리 전 그날의 상태와 원하는 방향을 충분히 듣습니다.',
     method:'피부 상태와 민감한 부위를 먼저 확인하고, 얼굴 라인을 따라 편안한 강도로 세심하게 진행합니다. 관리 중에도 불편함이 없는지 계속 확인합니다.',
     caution:'피부 시술 직후이거나 염증, 상처, 심한 자극이 있다면 관리 전 반드시 알려주세요. 필요한 경우 관리를 미루고 의료진과 먼저 상담해 주세요.',
-    faq:[['관리 시간은 어떻게 되나요?','약손 얼굴윤곽 관리는 70분 동안 진행합니다.'],['얼굴만 집중해서 관리받을 수 있나요?','네. 얼굴에 집중해 관리받고 싶은 분을 위한 단독 프로그램입니다.'],['강도는 조절할 수 있나요?','관리 전 원하는 강도와 민감한 부위를 확인하고, 진행 중에도 편안함을 계속 묻습니다.']]
+    faq:[['관리 시간은 어떻게 되나요?','얼굴윤곽 집중관리는 약 40분 동안 진행합니다.'],['얼굴만 집중해서 관리받을 수 있나요?','네. 얼굴에 집중해 관리받고 싶은 분을 위한 단독 프로그램입니다.'],['강도는 조절할 수 있나요?','관리 전 원하는 강도와 민감한 부위를 확인하고, 진행 중에도 편안함을 계속 묻습니다.']]
   }
 } as const;
 
@@ -108,7 +108,7 @@ const pageNames = {
   about: '자연미 소개',
   prenatal: '산전관리',
   postnatal: '산후관리',
-  'face-care': '약손 얼굴윤곽 관리',
+  'face-care': '얼굴윤곽 집중관리',
   'body-care': '체형·약손관리',
   programs: '프로그램·이용 안내',
   reviews: '후기·FAQ',
@@ -129,7 +129,7 @@ function ServicePage({data,image,program}:{data:typeof services[keyof typeof ser
   <section className="soft-block"><div className="two-column section-shell"><div><p className="eyebrow">몸이 보내는 신호</p><h2>고객이 겪는 불편</h2></div><p>{data.discomfort}</p></div></section>
   <section className="content-block two-column section-shell"><div><p className="eyebrow">자연미의 관리 방법</p><h2>자연미의 관리 방법</h2></div><div><p>{data.method}</p><aside className="notice"><strong>관리 전 꼭 알려주세요</strong>{data.caution}</aside></div></section>
   <section className="dark-block"><div className="section-shell"><p className="eyebrow">관리 진행 순서</p><h2>관리 진행 순서</h2><ol className="process"><li><b>01</b><strong>예약 상담</strong><span>시기와 현재 상태를 확인합니다.</span></li><li><b>02</b><strong>당일 컨디션 확인</strong><span>불편한 부위와 주의사항을 듣습니다.</span></li><li><b>03</b><strong>맞춤 약손관리</strong><span>편안함을 확인하며 진행합니다.</span></li><li><b>04</b><strong>마무리 안내</strong><span>관리 후 유의사항을 설명합니다.</span></li></ol></div></section>
-  <section className="content-block section-shell"><div className="section-title"><p className="eyebrow">관리 시간과 횟수</p><h2>{program ? '관리 시간과 가격' : '추천 횟수와 관리 시간'}</h2><p>{program ? '상담 후 당일 상태를 확인하고 안내된 시간 안에서 진행합니다.' : '개인의 상태와 목적에 따라 달라지므로 단정하지 않고 상담 후 안내합니다.'}</p></div><div className="info-cards"><article><Clock3/><h3>관리 시간</h3><p>{program?.durationMinutes ? `${program.durationMinutes}분` : '희망 부위와 프로그램 구성에 따라 상담 후 안내'}</p></article><article><Sparkles/><h3>{program ? '1회 가격' : '추천 횟수'}</h3><p>{program ? `${program.price.toLocaleString('ko-KR')}원` : '단회 상담 후 현재 상태와 목표에 맞춰 제안'}</p></article></div></section>
+  <section className="content-block section-shell"><div className="section-title"><p className="eyebrow">관리 시간과 횟수</p><h2>{program ? '관리 시간과 가격' : '추천 횟수와 관리 시간'}</h2><p>{program ? '상담 후 당일 상태를 확인하고 안내된 시간 안에서 진행합니다.' : '개인의 상태와 목적에 따라 달라지므로 단정하지 않고 상담 후 안내합니다.'}</p></div><div className="info-cards"><article><Clock3/><h3>관리 시간</h3><p>{program?.durationMinutes ? `${program.durationMinutes}분` : '희망 부위와 프로그램 구성에 따라 상담 후 안내'}</p></article><article><Sparkles/><h3>{program ? '1회 가격' : '추천 횟수'}</h3><p>{program ? `${program.price.toLocaleString('ko-KR')}원` : '단회 상담 후 현재 상태와 목표에 맞춰 제안'}</p></article>{program?.packagePrice ? <article><Sparkles/><h3>10회 가격</h3><p>{program.packagePrice.toLocaleString('ko-KR')}원 (회당 {(program.packagePrice / 10).toLocaleString('ko-KR')}원)</p></article> : null}</div></section>
   <section className="soft-block testimonial-placeholder"><p className="eyebrow">실제 고객 후기</p><h2><span className="title-line">실제 고객의 이야기를</span><span className="title-line">있는 그대로 전하겠습니다</span></h2><p>고객 동의를 받은 후기 원문과 관리 시점이 확인되면 이 영역에 게시합니다.</p></section>
   <section className="content-block section-shell faq"><div className="section-title"><p className="eyebrow">자주 묻는 질문</p><h2>자주 묻는 질문</h2></div>{data.faq.map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</section><Consultation/><Footer/></main>
 }
