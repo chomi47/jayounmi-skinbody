@@ -858,9 +858,9 @@ export const blogPosts: BlogPost[] = [
     "summary": "얼굴이 커 보이는 느낌을 한 가지 원인으로 단정하지 않고, 피부와 생활 습관을 함께 살피는 열 가지 질문입니다.",
     "date": "2026.11.28",
     "readTime": "5분",
-    "image": "/images/blog-2026-11-28-face-checklist.png",
-    "imageAlt": "얼굴선과 생활 습관을 표현한 설명용 일러스트",
-    "imageCaption": "AI 생성 예시 · 얼굴선과 생활 습관을 살피는 개념도",
+    "image": "/images/blog-2026-11-28-face-check-photo.png",
+    "imageAlt": "거울 앞에서 얼굴 상태를 살피는 사람의 연출 사진",
+    "preserveImageRatio": true,
     "intro": "거울 속 얼굴이 평소보다 넓어 보이는 날이 있습니다. 사진의 조명, 수면, 피부의 건조함과 일시적인 붓기 등 여러 조건이 겹칠 수 있습니다. 아래 항목은 원인을 진단하는 검사가 아니라, 상담 전에 오늘의 상태를 정리하는 메모입니다.",
     "sections": [
       {
@@ -937,9 +937,9 @@ export const blogPosts: BlogPost[] = [
     "summary": "미용 손 관리가 살필 수 있는 피부와 편안함의 범위, 뼈·질환을 바꾸지 못하는 한계를 구분합니다.",
     "date": "2026.11.28",
     "readTime": "5분",
-    "image": "/images/blog-2026-11-28-care-boundaries.png",
-    "imageAlt": "얼굴선과 손 관리를 표현한 설명용 일러스트",
-    "imageCaption": "AI 생성 예시 · 손으로 하는 미용 관리의 범위를 설명하는 일러스트",
+    "image": "/images/blog-2026-11-28-care-scope-photo.png",
+    "imageAlt": "편안한 손 관리 장면을 담은 연출 사진",
+    "preserveImageRatio": true,
     "intro": "수술이나 주사 없이 얼굴선을 정돈할 수 있다는 말을 들으면 기대가 커집니다. 하지만 손으로 하는 미용 관리와 의료 시술은 목적과 범위가 다릅니다. 상담 전에 가능한 일과 기대하기 어려운 일을 나눠 보는 것이 중요합니다.",
     "sections": [
       {
@@ -1016,9 +1016,9 @@ export const blogPosts: BlogPost[] = [
     "summary": "얼굴윤곽관리 전후를 단정하기보다 같은 조건으로 사진을 남기고 피부 상태를 기록하는 법을 안내합니다.",
     "date": "2026.11.28",
     "readTime": "5분",
-    "image": "/images/blog-2026-11-28-photo-guide.png",
-    "imageAlt": "휴대전화 촬영 각도와 얼굴선을 표현한 설명용 일러스트",
-    "imageCaption": "AI 생성 예시 · 같은 조건으로 얼굴 사진을 남기는 방법",
+    "image": "/images/blog-2026-11-28-photo-setup-photo.png",
+    "imageAlt": "일정한 조명에서 휴대전화 촬영 환경을 준비한 사진",
+    "preserveImageRatio": true,
     "intro": "사진 속 얼굴이 어제와 달라 보인다고 곧바로 관리의 결과라고 말하기는 어렵습니다. 조명과 각도, 카메라 거리, 수면과 그날의 피부 상태가 함께 달라지기 때문입니다. 내 사진을 비교하고 싶다면 먼저 촬영 조건을 일정하게 맞춰 보세요.",
     "sections": [
       {
@@ -1095,9 +1095,9 @@ export const blogPosts: BlogPost[] = [
     "summary": "임신 중 얼굴 붓기를 가볍게 넘기지 않고 의료진에게 먼저 확인할 상황과 피부관리 상담 범위를 구분합니다.",
     "date": "2026.11.28",
     "readTime": "5분",
-    "image": "/images/blog-2026-11-28-prenatal-face.png",
-    "imageAlt": "임신 중 편안한 자세와 얼굴 피부관리를 표현한 설명용 일러스트",
-    "imageCaption": "AI 생성 예시 · 산전 얼굴 피부관리 상담을 설명하는 일러스트",
+    "image": "/images/blog-2026-11-28-prenatal-care-photo.png",
+    "imageAlt": "임신 중 피부 상태를 살피는 사람의 연출 사진",
+    "preserveImageRatio": true,
     "intro": "임신 중에는 얼굴이나 손이 평소와 다르게 느껴질 수 있습니다. 그렇다고 모든 붓기를 같은 이유로 설명하거나 관리로 풀려고 하면 안 됩니다. 갑작스러운 변화가 있는지 먼저 살피고 담당 의료진의 안내를 확인한 뒤, 편안한 피부관리의 범위를 생각해 보세요.",
     "sections": [
       {
