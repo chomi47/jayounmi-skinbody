@@ -26,20 +26,20 @@ export default function Home() {
         <div className="hero-wash" />
         <div className="hero-copy">
           <p className="eyebrow hero-location">대구 수성구 신매동</p>
-          <h1><span className="title-line"><em>25년 경력 약손의</em></span><span className="title-line"><em>피부·바디 관리</em></span></h1>
-          <p className="lead">얼굴과 바디를 세심하게 살피며, 지금 필요한 관리를 함께 찾습니다. 산전·산후관리도 편안하게 상담해 주세요.</p>
+          <h1><span className="title-line"><em>25년 경력 원장의</em></span><span className="title-line"><em>얼굴윤곽관리</em></span></h1>
+          <p className="lead">얼굴윤곽관리를 중심으로 피부 상태와 얼굴 라인을 세심하게 살핍니다. 산전·산후관리와 전신관리도 현재 상태에 맞춰 상담합니다.</p>
           <div className="hero-actions">
             <a className="primary-button" href={PHONE_HREF}>전화상담</a>
             <a className="text-link" href="/about">자연미 이야기 <ArrowRight size={16}/></a>
           </div>
           <small className="booking-helper booking-helper--hero">관리 중에는 전화를 받기 어려울 수 있습니다. 부재 시 확인 후 연락드리겠습니다.</small>
-          <div className="trust-line"><span>산전·산후 맞춤관리</span><span>1:1 상담·직접 관리</span></div>
+          <div className="trust-line"><span>얼굴윤곽 중심 관리</span><span>1:1 상담·직접 관리</span></div>
         </div>
       </section>
 
       <section className="intro section-shell">
-        <div><p className="eyebrow">자연미의 관리</p><h2><span className="title-line">얼굴부터 산전·산후,</span><span className="title-line">전신 바디 밸런스까지</span></h2></div>
-        <p>25년간 쌓아온 피부 바디 관리 경험을 바탕으로, 그날의 몸 상태에 맞춰 한 분씩 관리합니다.</p>
+        <div><p className="eyebrow">자연미의 관리</p><h2><span className="title-line">얼굴윤곽관리부터</span><span className="title-line">산전·산후, 전신관리까지</span></h2></div>
+        <p>25년 경력 원장이 한 분씩 상담하며, 그날의 피부와 몸 상태에 맞는 관리 방향을 안내합니다.</p>
       </section>
 
       <section className="program-grid section-shell">

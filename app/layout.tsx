@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   openGraph: {
     title: '대구 신매동 얼굴윤곽 관리 | 자연미 피부바디',
-    description: '피부·바디 관리 경력 25년 원장이 직접 관리하는 대구 신매동 1인 관리샵. 얼굴윤곽을 중심으로 산전·산후관리와 바디 밸런스를 함께 제공합니다.',
+    description: '대구 신매동 1인 관리실. 25년 경력 원장이 얼굴윤곽관리를 중심으로 산전·산후관리와 전신관리를 한 분씩 상담하고 직접 관리합니다.',
     url: '/',
     type: 'website',
     locale: 'ko_KR',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '대구 신매동 얼굴윤곽 관리 | 자연미 피부바디',
-    description: '피부·바디 관리 경력 25년 원장이 직접 관리하는 대구 신매동 1인 관리샵. 얼굴윤곽을 중심으로 산전·산후관리와 바디 밸런스를 함께 제공합니다.',
+    description: '대구 신매동 1인 관리실. 25년 경력 원장이 얼굴윤곽관리를 중심으로 산전·산후관리와 전신관리를 한 분씩 상담하고 직접 관리합니다.',
     images: [HOME_OG_IMAGE],
   },
 };
